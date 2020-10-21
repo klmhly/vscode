@@ -8,4 +8,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Initial release
 - 2020.10.21
--  初始化测试
+  - 初始化测试、注册命令调用
+  - 绑定快捷键、添加菜单
+  - 自定义信息框

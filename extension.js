@@ -1,4 +1,5 @@
 // vscode模块包含了 
+const { exec } = require('child_process');
 const vscode = require('vscode');
 
 /**
@@ -11,7 +12,14 @@ function activate(context) {
 	// 注册命令对应的处理函数
 	let disposable = vscode.commands.registerCommand('directory.helloWorld', function () {
 		// The code you place here will be executed every time your command is executed
-		vscode.window.showInformationMessage('Hello World from directory!');
+		vscode.window.setStatusBarMessage('你好，前端艺术家！');
+		vscode.window.showInformationMessage('是否要打开玉宝的博客？', '是', '否', '不再提示').then(result => {
+			if(result === '是') {
+				exec(`open https://klmhly.github.io`)
+			} else if (result === '不再提示') {
+
+			}
+		})
 	});
 
 	context.subscriptions.push(disposable);
